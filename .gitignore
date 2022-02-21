@@ -85,3 +85,4 @@ lint/tmp/
 # lint/reports/
 .DS_Store
 application/lib/testfile.dart
+tools/generate_module_pages.js

@@ -1,6 +1,7 @@
 {
-  "name" : "",
+  "name" : "Example Module",
   "image" : "",
+  "author": "Example Author",
   "prebuiltAvailable" : false,
   "prebuiltArchivePath" : "",
   "files" : [

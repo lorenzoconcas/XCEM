@@ -8,6 +8,7 @@ class ModuleFiles {
   String srcExtension;
   String destExtension;
 
+
   ModuleFiles(this.filename, this.replacePath, this.srcExtension,
       this.srcMimetype, this.destExtension, this.destMimetype);
 
@@ -25,21 +26,28 @@ class ModuleFiles {
 class Module {
   String name;
   String image; //png base64
+  String author;
   bool prebuiltAvailable;
   String prebuiltArchivePath;
   List<ModuleFiles> files;
 
-  Module(this.name, this.image, this.prebuiltAvailable,
+  Module(this.name, this.author, this.image, this.prebuiltAvailable,
       this.prebuiltArchivePath, this.files);
 
   Module.fromJSON(dynamic json)
       : name = Safe(json["name"], ""),
+        author = Safe(json["author"], ""),
         image = Safe(json["image"], ""),
-        prebuiltArchivePath = Safe(json["prebuiltAvailable"], ""),
-        prebuiltAvailable = Safe(json["prebuiltArchivePath"], ""),
+        prebuiltArchivePath = Safe(json["prebuiltArchivePath"], ""),
+        prebuiltAvailable = Safe(json["prebuiltAvailable"], false) as bool,
         files = Safe((json["files"] as List)
             .map((e) => ModuleFiles.fromJSON(e))
             .toList(), <ModuleFiles>[])
   ;
+
+  @override
+  String toString() {
+    return "Module name $name created by $author";
+  }
 
 }

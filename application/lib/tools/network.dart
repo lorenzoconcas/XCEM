@@ -21,21 +21,17 @@ Future<ApplicationVersion> getVersionData(VersionChannel channel) async {
   return ApplicationVersion.fromJSON(channel, json);
 }
 
-Future<Repository> getRepoData() async{
+Future<Repository> getRepoData() async {
   var json = await getJSON(Repository.repoDataUrl);
   return Repository.fromJSON(json);
 }
 
-Future<List<Module>> getModules(Repository repo) async{
+Future<List<Module>> getModules(Repository repo) async {
   List<Module> modules = <Module>[];
   for (var element in repo.availableModules) {
-    var moduleUrl = Repository.repoModulesUrl + element.b +"/module.json";
-    print(moduleUrl);
-    var json = getJSON(moduleUrl);
-    print(json);
-    print(Module.fromJSON(json));
+    var moduleUrl = Repository.repoModulesUrl + element.b + "/module.json";
+    var json = await getJSON(moduleUrl);
     modules.add(Module.fromJSON(json));
-
   }
 
   return modules;
