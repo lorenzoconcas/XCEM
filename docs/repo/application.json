@@ -1,0 +1,20 @@
+{
+  "beta" : {
+    "url" : "",
+    "available" : false,
+    "integerVersion" : 0,
+    "versionName" : "Beta 0.5"
+  },
+  "stable" : {
+    "url" : "",
+    "available" : false,
+    "integerVersion" : 0,
+    "versionName" : "Stable 1.0"
+  },
+  "dev" : {
+    "url" : "",
+    "available" : true,
+    "integerVersion" : 0,
+    "versionName" : "dev"
+  }
+}

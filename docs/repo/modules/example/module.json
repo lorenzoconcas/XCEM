@@ -1,0 +1,16 @@
+{
+  "name" : "",
+  "image" : "",
+  "prebuild_available" : false,
+  "prebuilt_archive_path" : "",
+  "files" : [
+    {
+      "file_name" : "sound_file.ogg",
+      "replace_path" : "/system/media/audio/sound.ogg",
+      "src_mimetype" : "audio/ogg",
+      "dest_mimetype" : "audio/ogg",
+      "src_extension" : "ogg",
+      "dest_extension" : "ogg"
+    }
+  ]
+}
