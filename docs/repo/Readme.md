@@ -1,6 +1,4 @@
-🇬🇧🇺🇸 * English
-
-## How to send modules
+## 🇬🇧🇺🇸 * How to send modules
 
 1) Clone repository
 2) Create your module folder in /docs/repo/modules/
@@ -8,9 +6,7 @@
 4) Create a pull request
 5) Wait for approval 😄
 
-🇮🇹 Italiano
-
-## Come inviare moduli
+## 🇮🇹 Come inviare moduli
 
 1) Clona la repository
 2) Crea la cartella del tuo modulo in /docs/repo/modules/

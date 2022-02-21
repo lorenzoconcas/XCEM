@@ -1,9 +1,11 @@
 {
   "baseUrl" : "https://lorenzoconcas.github.io/xiaomi_camera_effects_manager/repo/modules/",
+  "lastUpdate" : "2022-02-21T00:00:00.000Z",
   "modules" : [
     {
       "name" : "Example Module Name",
-      "url" : "example"
+      "url" : "example",
+      "image" : ""
     }
   ]
 }
