@@ -4,6 +4,8 @@ import 'package:http/http.dart';
 import 'package:xcem/models/application_version.dart';
 import 'package:xcem/models/repository.dart';
 
+import '../models/module.dart';
+
 Future<Response> getData(String url) async {
   Response r = await get(Uri.parse(url));
   return r;
@@ -20,6 +22,21 @@ Future<ApplicationVersion> getVersionData(VersionChannel channel) async {
 }
 
 Future<Repository> getRepoData() async{
-  var json = await getJSON(Repository.repoUrl);
+  var json = await getJSON(Repository.repoDataUrl);
   return Repository.fromJSON(json);
+}
+
+Future<List<Module>> getModules(Repository repo) async{
+  List<Module> modules = <Module>[];
+  for (var element in repo.availableModules) {
+    var moduleUrl = Repository.repoModulesUrl + element.b +"/module.json";
+    print(moduleUrl);
+    var json = getJSON(moduleUrl);
+    print(json);
+    print(Module.fromJSON(json));
+    modules.add(Module.fromJSON(json));
+
+  }
+
+  return modules;
 }
