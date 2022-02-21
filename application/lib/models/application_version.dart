@@ -16,10 +16,10 @@ class ApplicationVersion {
       this.versionName, this.currentChannel);
 
   ApplicationVersion.fromJSON(VersionChannel channel, dynamic json)
-      : fileUrl = Safe(json[channel.toString().replaceAll("VersionChannel.", "")]['url'], ""),
-        available = Safe(json[channel.toString().replaceAll("VersionChannel.", "")]['available'], ""),
-        integerVersion = Safe(json[channel.toString().replaceAll("VersionChannel.", "")]['integerVersion'], ""),
-        versionName = Safe(json[channel.toString().replaceAll("VersionChannel.", "")]['versionName'], ""),
+      : fileUrl = safe(json[channel.toString().replaceAll("VersionChannel.", "")]['url'], ""),
+        available = safe(json[channel.toString().replaceAll("VersionChannel.", "")]['available'], ""),
+        integerVersion = safe(json[channel.toString().replaceAll("VersionChannel.", "")]['integerVersion'], ""),
+        versionName = safe(json[channel.toString().replaceAll("VersionChannel.", "")]['versionName'], ""),
         currentChannel = channel;
 
   ApplicationVersion.empty()

@@ -22,10 +22,16 @@ class Repository {
 
   Repository.fromJSON(dynamic json)
       : lastUpdate = json["lastUpdate"],
-        availableModules = Safe(
+        availableModules = safe(
             (json["modules"] as List)
-                .map((e) => Triple<String, String, String>(
+                .map((e) =>
+                Triple<String, String, String>(
                     e["name"], e["url"], e["image"]))
                 .toList(),
             <Triple<String, String, String>>[]);
+
+  Repository.empty()
+      :
+        lastUpdate = DateTime.now().toIso8601String(),
+        availableModules = <Triple<String, String, String>>[];
 }

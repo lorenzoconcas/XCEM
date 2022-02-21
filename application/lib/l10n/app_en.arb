@@ -1,0 +1,16 @@
+{
+  "applicationName": "\uD83C\uDDEC\uD83C\uDDE7\uD83C\uDDFA\uD83C\uDDF8 XCEM",
+  "@applicationName": {
+  "description": "Application Title in actionbar"
+  },
+  "fabTooltip": "Create new module",
+  "repositoryTitle": "Repository",
+  "createdBy": "Created by : ",
+  "home": "Home",
+  "@home": {
+    "description": "The first icon in bottom navigation bar"
+  },
+  "donwloadedModules": "Downloads",
+  "createdModules": "Creations",
+  "underConstruction": "Under Construction"
+}

@@ -86,3 +86,7 @@ lint/tmp/
 .DS_Store
 application/lib/testfile.dart
 tools/generate_module_pages.js
+application/ios/
+application/linux/
+application/windows
+application/web
