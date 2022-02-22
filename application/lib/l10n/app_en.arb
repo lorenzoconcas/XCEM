@@ -20,5 +20,9 @@
   "comment_on_xda": "Comment on XDA Forums",
   "see_on_github": "See code on GitHub",
   "see_project_page": "Visit project page",
-  "madeInSardinia": "Made with ❤️ in Sardinia"
+  "madeInSardinia": "Made with ❤️ in Sardinia",
+  "settings_page_subtitle": "⚠️ Any change will cause app restart",
+  "checkUpdates": "Check for Updates",
+  "updateChannel": "Update channel",
+  "useDarkMode": "Use dark mode"
 }

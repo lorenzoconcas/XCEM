@@ -8,6 +8,7 @@ import '../models/module.dart';
 
 Future<Response> getData(String url) async {
   Response r = await get(Uri.parse(url));
+  print(r);
   return r;
 }
 
@@ -29,7 +30,7 @@ Future<Repository> getRepoData() async {
 Future<List<Module>> getModules(Repository repo) async {
   List<Module> modules = <Module>[];
   for (var element in repo.availableModules) {
-    var moduleUrl = Repository.repoModulesUrl + element.b + "/module.json";
+    var moduleUrl = Repository.repoModulesUrl + element.url + "/module.json";
     var json = await getJSON(moduleUrl);
     modules.add(Module.fromJSON(json));
   }

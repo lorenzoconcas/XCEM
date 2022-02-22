@@ -1,12 +1,6 @@
+import 'package:xcsem/models/module.dart';
+
 import '../utils/utils.dart';
-
-class Triple<T1, T2, T3> {
-  final T1 a;
-  final T2 b;
-  final T3 c;
-
-  Triple(this.a, this.b, this.c);
-}
 
 class Repository {
   static String repoDataUrl =
@@ -16,7 +10,7 @@ class Repository {
   String lastUpdate;
 
   //module name, module url, image in base64
-  List<Triple<String, String, String>> availableModules;
+  List<RepoModule> availableModules;
 
   Repository(this.lastUpdate, this.availableModules);
 
@@ -24,14 +18,11 @@ class Repository {
       : lastUpdate = json["lastUpdate"],
         availableModules = safe(
             (json["modules"] as List)
-                .map((e) =>
-                Triple<String, String, String>(
-                    e["name"], e["url"], e["image"]))
+                .map((e) => RepoModule.fromJSON(e))
                 .toList(),
-            <Triple<String, String, String>>[]);
+            <RepoModule>[]);
 
   Repository.empty()
-      :
-        lastUpdate = DateTime.now().toIso8601String(),
-        availableModules = <Triple<String, String, String>>[];
+      : lastUpdate = DateTime.now().toIso8601String(),
+        availableModules = <RepoModule>[];
 }

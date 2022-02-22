@@ -1,42 +1,48 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:xcsem/tools/network.dart';
 import '../models/module.dart';
 import '../models/repository.dart';
 import '../utils/utils.dart';
 
-class RepoView extends StatelessWidget {
-  final Repository repo;
-  final AppLocalizations locale;
-  final List<Module> repoModules = <Module>[
-    Module.fake(),
-    Module.fake(),
-    Module.fake(),
-    Module.fake(),
-    Module.fake(),
-    Module.fake(),
-    Module.fake(),
-    Module.fake(),
-    Module.fake(),
-    Module.fake(),
-    Module.fake(),
-    Module.fake(),
-    Module.fake(),
-    Module.fake(),
-  ];
+class RepoView extends StatefulWidget {
+  AppLocalizations locale;
 
-  RepoView({Key? key, required this.repo, required this.locale})
-      : super(key: key);
+  RepoView({Key? key, required this.locale}) : super(key: key);
+
+  @override
+  State<RepoView> createState() => _RepoViewState();
+}
+
+class _RepoViewState extends State<RepoView> {
+  late Repository repo = Repository.empty();
+  late AppLocalizations locale;
+  @override
+  void initState() {
+    super.initState();
+    locale = widget.locale;
+    _loadRepoData();
+  }
+
+  _loadRepoData() async {
+    repo = await getRepoData();
+    setState((){
+      repo = repo;
+    });
+
+    print("done");
+    print(repo.availableModules);
+  }
 
   //UI functions
-  Widget getImage(Module module, double w, double h) {
-    if (module.image == "") {
+  Widget getImage(String img, double w, double h) {
+    if (img == "") {
       return const SizedBox(width: 0, height: 0);
     } else {
       try {
         Image image = Image.memory(
-          dataFromB64(module.image),
+          dataFromB64(img),
           fit: BoxFit.cover,
           width: w,
           height: h,
@@ -48,8 +54,8 @@ class RepoView extends StatelessWidget {
     }
   }
 
-  Widget getCard(Module module) {
-    Widget image = getImage(module, 80, 80);
+  Widget getCard(RepoModule module) {
+    Widget image = getImage(module.image, 80, 80);
     return Card(
         color: Colors.green,
         child: Row(
@@ -68,7 +74,7 @@ class RepoView extends StatelessWidget {
                             style:
                                 const TextStyle(fontWeight: FontWeight.bold)),
                         const SizedBox(height: 8.0),
-                        Text(locale.createdBy + " " + module.author)
+                        Text(locale.createdBy + " " + module.name)
                       ],
                     ))),
             IconButton(onPressed: () {}, icon: const Icon(Icons.download))
@@ -78,13 +84,8 @@ class RepoView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var mediaQuery = MediaQuery.of(context);
-    double repoListHeight = mediaQuery.size.height - //window height
-            mediaQuery.viewPadding.top -
-            140 //remaining padding (includes bottomNavigation height)
-        ;
+    //var mediaQuery = MediaQuery.of(context);
     return Column(
-
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Row(
@@ -104,33 +105,25 @@ class RepoView extends StatelessWidget {
                   ],
                 ),
               ),
-              IconButton(onPressed: () {}, icon: const Icon(Icons.refresh))
+              IconButton(
+                  onPressed: () {
+                    _loadRepoData();
+                  },
+                  icon: const Icon(Icons.refresh))
             ],
           ),
           const SizedBox(height: 8.0),
-          // SizedBox(
-          //     height: repoListHeight,
-          //     child: ListView.separated(
-          //       padding: const EdgeInsets.all(0),
-          //       itemCount: repoModules.length,
-          //       scrollDirection: Axis.vertical,
-          //       separatorBuilder: (BuildContext context, int index) =>
-          //           Container(height: 0),
-          //       itemBuilder: (BuildContext context, int index) {
-          //         return getCard(repoModules[index]);
-          //       },
-          //     ))
           Expanded(
               child: ListView.separated(
-                padding: const EdgeInsets.all(0),
-                itemCount: repoModules.length,
-                scrollDirection: Axis.vertical,
-                separatorBuilder: (BuildContext context, int index) =>
-                    Container(height: 0),
-                itemBuilder: (BuildContext context, int index) {
-                  return getCard(repoModules[index]);
-                },
-              ))
+            padding: const EdgeInsets.all(0),
+            itemCount: repo.availableModules.length,
+            scrollDirection: Axis.vertical,
+            separatorBuilder: (BuildContext context, int index) =>
+                Container(height: 0),
+            itemBuilder: (BuildContext context, int index) {
+              return getCard(repo.availableModules[index]);
+            },
+          ))
         ]);
   }
 }

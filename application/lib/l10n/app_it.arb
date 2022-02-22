@@ -14,5 +14,9 @@
   "see_on_github": "Guarda il codice su GitHub",
   "see_project_page": "Visita la pagina del progetto",
   "applicationTitle": "Xiaomi Camera Sounds Effects Manager",
-  "madeInSardinia": "Fatto con ❤️ in Sardegna"
+  "madeInSardinia": "Fatto con ❤️  in Sardegna",
+  "settings_page_subtitle": "⚠️ Il cambio delle impostazioni causerà il riavvio dell'app",
+  "checkUpdates": "Controlla aggiornamenti",
+  "updateChannel": "Canale aggiornamento",
+  "useDarkMode": "Usa modalità scura"
 }

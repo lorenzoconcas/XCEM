@@ -34,4 +34,6 @@ class ApplicationVersion {
     return "Current channel : ${currentChannel.toString()}"
         "\nAvailable version : $versionName";
   }
+
+
 }

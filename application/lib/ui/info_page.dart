@@ -44,17 +44,19 @@ class InfoPage extends StatelessWidget {
     return Card(
         child: Row(
       children: [
-        FloatingActionButton(
-          splashColor: Colors.white,
-          mini: true,
-          onPressed: () {
-            try {
-              launch("https://github.com/lorenzoconcas/XCSEM");
-            } catch (e) {}
-          },
-          backgroundColor: Colors.black,
-          child: const Icon(FontAwesomeIcons.github, color: Colors.white),
-        ),
+        Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: FloatingActionButton(
+              splashColor: Colors.white,
+              mini: true,
+              onPressed: () {
+                try {
+                  launch("https://github.com/lorenzoconcas/XCSEM");
+                } catch (e) {}
+              },
+              backgroundColor: Colors.black,
+              child: const Icon(FontAwesomeIcons.github, color: Colors.white),
+            )),
         Text(locale.see_on_github)
       ],
     ));
@@ -64,17 +66,19 @@ class InfoPage extends StatelessWidget {
     return Card(
         child: Row(
       children: [
-        FloatingActionButton(
-          splashColor: Colors.white,
-          mini: true,
-          onPressed: () {
-            try {
-              launch("https://lorenzoconcas.github.io/XCSEM");
-            } catch (e) {}
-          },
-          backgroundColor: Colors.black,
-          child: const Icon(FontAwesomeIcons.github, color: Colors.white),
-        ),
+        Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: FloatingActionButton(
+              splashColor: Colors.white,
+              mini: true,
+              onPressed: () {
+                try {
+                  launch("https://lorenzoconcas.github.io/XCSEM");
+                } catch (e) {}
+              },
+              backgroundColor: Colors.black,
+              child: const Icon(FontAwesomeIcons.github, color: Colors.white),
+            )),
         const Text("Visit project page")
       ],
     ));
@@ -100,7 +104,9 @@ class InfoPage extends StatelessWidget {
         githubBtn(),
         xdaBtn(),
         const Expanded(child: Text("")),
-        Text(locale.madeInSardinia)
+        const Divider(),
+        Text(locale.madeInSardinia),
+        const SizedBox(height: 12.0)
       ],
     ));
   }
