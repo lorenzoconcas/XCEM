@@ -6,5 +6,12 @@
   "home": "Home",
   "donwloadedModules": "Scaricati",
   "createdModules": "Creazioni",
-  "underConstruction": "In costruzione"
+  "underConstruction": "In costruzione",
+  "availableModuleUpdates": "Aggiornamenti",
+  "settings": "Impostazioni",
+  "info": "Informazioni",
+  "comment_on_xda": "Commenta sui Forum di XDA",
+  "see_on_github": "Guarda il codice su GitHub",
+  "see_project_page": "Visita la pagina del progetto",
+  "madeInSardinia": "Fatto con ❤️ in Sardegna"
 }

@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
-import 'package:xcem/models/application_version.dart';
-import 'package:xcem/models/repository.dart';
+import 'package:xcsem/models/application_version.dart';
+import 'package:xcsem/models/repository.dart';
 
 import '../models/module.dart';
 

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:xcem/models/repository.dart';
-import 'package:xcem/ui/repo_view.dart';
+import 'package:xcsem/models/repository.dart';
+import 'package:xcsem/ui/info_page.dart';
+import 'package:xcsem/ui/repo_view.dart';
 import '../models/module.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:xcem/utils/utils.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -31,6 +31,9 @@ class _MainPageState extends State<MainPage> {
       case 0:
         mainWidget = RepoView(repo: Repository.empty(), locale: locale);
         break;
+      case 4:
+        mainWidget = InfoPage(locale:locale);
+        break;
       default:
         mainWidget = Text(locale.underConstruction);
     }
@@ -48,6 +51,8 @@ class _MainPageState extends State<MainPage> {
           : null,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentPage,
+        selectedItemColor: Colors.green,
+        unselectedItemColor: Colors.lightGreen[300],
         onTap: (int page) {
           setState(() {
             currentPage = page;
@@ -58,9 +63,17 @@ class _MainPageState extends State<MainPage> {
               icon: const Icon(Icons.home), label: locale.home),
           BottomNavigationBarItem(
               icon: const Icon(Icons.download),
-              label: locale.donwloadedModules),
+              label: locale.downloadedModules),
+          // BottomNavigationBarItem(
+          //     icon: const Icon(Icons.system_update_alt_sharp),
+          //     label: locale.availableModuleUpdates),
           BottomNavigationBarItem(
-              icon: const Icon(Icons.create), label: locale.createdModules)
+              icon: const Icon(Icons.create), label: locale.createdModules),
+          BottomNavigationBarItem(
+              icon: const Icon(Icons.settings), label: locale.settings),
+          BottomNavigationBarItem(
+              icon: const Icon(Icons.info), label: locale.info),
+
         ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );

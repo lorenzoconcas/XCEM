@@ -2,7 +2,7 @@ import '../utils/utils.dart';
 
 enum VersionChannel { stable, beta, dev }
 
-const appDataUrl = "https://lorenzoconcas.github.io/xiaomi_camera_effects_manager/repo/application.json";
+const appDataUrl = "https://lorenzoconcas.github.io/XCSEM/repo/application.json";
 
 class ApplicationVersion {
   String fileUrl;

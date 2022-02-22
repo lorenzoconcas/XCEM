@@ -10,9 +10,9 @@ class Triple<T1, T2, T3> {
 
 class Repository {
   static String repoDataUrl =
-      "https://lorenzoconcas.github.io/xiaomi_camera_effects_manager/repo/repo.json";
+      "https://lorenzoconcas.github.io/XCSEM/repo/repo.json";
   static String repoModulesUrl =
-      "https://lorenzoconcas.github.io/xiaomi_camera_effects_manager/repo/modules/";
+      "https://lorenzoconcas.github.io/XCSEM/repo/modules/";
   String lastUpdate;
 
   //module name, module url, image in base64

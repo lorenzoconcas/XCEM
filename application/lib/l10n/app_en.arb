@@ -1,7 +1,7 @@
 {
-  "applicationName": "\uD83C\uDDEC\uD83C\uDDE7\uD83C\uDDFA\uD83C\uDDF8 XCEM",
+  "applicationName": "\uD83C\uDDEC\uD83C\uDDE7\uD83C\uDDFA\uD83C\uDDF8 XCSEM",
   "@applicationName": {
-  "description": "Application Title in actionbar"
+    "description": "Application Title in actionbar"
   },
   "fabTooltip": "Create new module",
   "repositoryTitle": "Repository",
@@ -10,7 +10,15 @@
   "@home": {
     "description": "The first icon in bottom navigation bar"
   },
-  "donwloadedModules": "Downloads",
+  "downloadedModules": "Downloads",
   "createdModules": "Creations",
-  "underConstruction": "Under Construction"
+  "underConstruction": "Under Construction",
+  "availableModuleUpdates": "Updates",
+  "settings": "settings",
+  "info": "Information",
+  "applicationTitle": "Xiaomi Camera Sounds Effects Manager",
+  "comment_on_xda": "Comment on XDA Forums",
+  "see_on_github": "See code on GitHub",
+  "see_project_page": "Visit project page",
+  "madeInSardinia": "Made with ❤️ in Sardinia"
 }
