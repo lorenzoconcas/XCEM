@@ -17,6 +17,13 @@ class RepoView extends StatelessWidget {
     Module.fake(),
     Module.fake(),
     Module.fake(),
+    Module.fake(),
+    Module.fake(),
+    Module.fake(),
+    Module.fake(),
+    Module.fake(),
+    Module.fake(),
+    Module.fake(),
   ];
 
   RepoView({Key? key, required this.repo, required this.locale})
@@ -74,9 +81,10 @@ class RepoView extends StatelessWidget {
     var mediaQuery = MediaQuery.of(context);
     double repoListHeight = mediaQuery.size.height - //window height
             mediaQuery.viewPadding.top -
-            180 //remaining padding (includes bottomNavigation height)
+            140 //remaining padding (includes bottomNavigation height)
         ;
     return Column(
+
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Row(
@@ -100,8 +108,19 @@ class RepoView extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 8.0),
-          SizedBox(
-              height: repoListHeight,
+          // SizedBox(
+          //     height: repoListHeight,
+          //     child: ListView.separated(
+          //       padding: const EdgeInsets.all(0),
+          //       itemCount: repoModules.length,
+          //       scrollDirection: Axis.vertical,
+          //       separatorBuilder: (BuildContext context, int index) =>
+          //           Container(height: 0),
+          //       itemBuilder: (BuildContext context, int index) {
+          //         return getCard(repoModules[index]);
+          //       },
+          //     ))
+          Expanded(
               child: ListView.separated(
                 padding: const EdgeInsets.all(0),
                 itemCount: repoModules.length,

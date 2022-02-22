@@ -4,7 +4,7 @@
   "repositoryTitle": "Repository",
   "createdBy": "Creato da : ",
   "home": "Home",
-  "donwloadedModules": "Scaricati",
+  "downloadedModules": "Scaricati",
   "createdModules": "Creazioni",
   "underConstruction": "In costruzione",
   "availableModuleUpdates": "Aggiornamenti",
@@ -13,5 +13,6 @@
   "comment_on_xda": "Commenta sui Forum di XDA",
   "see_on_github": "Guarda il codice su GitHub",
   "see_project_page": "Visita la pagina del progetto",
+  "applicationTitle": "Xiaomi Camera Sounds Effects Manager",
   "madeInSardinia": "Fatto con ❤️ in Sardegna"
 }

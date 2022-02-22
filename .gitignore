@@ -90,3 +90,8 @@ application/ios/
 application/linux/
 application/windows
 application/web
+application/macos
+
+application/macos/Runner.xcodeproj/project.pbxproj
+application/macos/Runner.xcodeproj/project.pbxproj
+application/macos/Runner.xcworkspace/contents.xcworkspacedata
