@@ -1,17 +1,17 @@
 {
-  "name" : "Example Module",
-  "image" : "",
+  "name": "Example Module",
+  "image": "",
+  "lastUpdated": "",
   "author": "Example Author",
-  "prebuiltAvailable" : false,
-  "prebuiltArchivePath" : "",
-  "files" : [
+  "description": "",
+  "files": [
     {
-      "fileName" : "sound_file.ogg",
-      "replacePath" : "/system/media/audio/sound.ogg",
-      "srcMimetype" : "audio/ogg",
-      "destMimetype" : "audio/ogg",
-      "srcExtension" : "ogg",
-      "destExtension" : "ogg"
+      "fileName": "sound_file.ogg",
+      "replacePath": "/system/media/audio/sound.ogg",
+      "srcMimetype": "audio/ogg",
+      "destMimetype": "audio/ogg",
+      "srcExtension": "ogg",
+      "destExtension": "ogg"
     }
   ]
 }

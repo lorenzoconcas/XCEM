@@ -18,6 +18,7 @@ class RepoView extends StatefulWidget {
 class _RepoViewState extends State<RepoView> {
   late Repository repo = Repository.empty();
   late AppLocalizations locale;
+
   @override
   void initState() {
     super.initState();
@@ -27,7 +28,7 @@ class _RepoViewState extends State<RepoView> {
 
   _loadRepoData() async {
     repo = await getRepoData();
-    setState((){
+    setState(() {
       repo = repo;
     });
 
@@ -58,28 +59,32 @@ class _RepoViewState extends State<RepoView> {
     Widget image = getImage(module.image, 80, 80);
     return Card(
         color: Colors.green,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            image,
-            Expanded(
-                child: Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(module.name,
-                            style:
-                                const TextStyle(fontWeight: FontWeight.bold)),
-                        const SizedBox(height: 8.0),
-                        Text(locale.createdBy + " " + module.name)
-                      ],
-                    ))),
-            IconButton(onPressed: () {}, icon: const Icon(Icons.download))
-          ],
-        ));
+        child: InkWell(
+            onTap: () {
+              _openModuleDetails(module);
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                image,
+                Expanded(
+                    child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(module.name,
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold)),
+                            const SizedBox(height: 8.0),
+                            Text(locale.createdBy + " " + module.name)
+                          ],
+                        ))),
+                IconButton(onPressed: () {}, icon: const Icon(Icons.download))
+              ],
+            )));
   }
 
   @override
@@ -126,4 +131,6 @@ class _RepoViewState extends State<RepoView> {
           ))
         ]);
   }
+
+  void _openModuleDetails(RepoModule module) {}
 }

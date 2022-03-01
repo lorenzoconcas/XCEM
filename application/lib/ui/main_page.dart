@@ -4,6 +4,7 @@ import 'package:xcsem/tools/network.dart';
 import 'package:xcsem/ui/info_page.dart';
 import 'package:xcsem/ui/repo_view.dart';
 import 'package:xcsem/ui/settings_page.dart';
+import 'package:xcsem/ui/test_page.dart';
 import '../data/Settings.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -48,7 +49,7 @@ class _MainPageState extends State<MainPage> {
         mainWidget = InfoPage(locale: locale);
         break;
       default:
-        mainWidget = Text(locale.underConstruction);
+        mainWidget = const TestPage();
     }
     return Scaffold(
       body: Padding(

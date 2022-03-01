@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:xcsem/models/application_version.dart';
 import 'package:xcsem/utils/utils.dart';
 
+import 'filesystem.dart';
+
 class Settings {
   static const settingsFileName = "settings.json";
   bool? darkMode = true;
