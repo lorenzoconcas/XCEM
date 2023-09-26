@@ -1,4 +1,4 @@
-# XCSEM
+# XCEM
 Xiaomi Camera Effects Manager
 
 ## 🇮🇹 Descrizione
